@@ -14,9 +14,11 @@ datasource db {
 }
 
 model Cliente {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  empresa   String   @unique
-  cnpj      String   @unique
+  id          Int    @id @default(autoincrement())
+  empresa     String
+  cnpj        String
+  status      String @default("Ativa") // Novo campo status
   dataRegistro DateTime @default(now())
-  status    String   @default("ativo")
 }
+
+
